@@ -12,15 +12,25 @@
     "@expo/vector-icons": "^15.0.2",
     "@react-navigation/bottom-tabs": "^7.4.7",
     "@react-navigation/native": "^7.1.17",
+    "axios": "^1.12.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
     "expo": "~54.0.10",
+    "expo-auth-session": "~7.0.8",
+    "expo-linking": "~8.0.8",
+    "expo-secure-store": "~15.0.7",
     "expo-status-bar": "~3.0.8",
+    "express": "^5.1.0",
     "react": "19.1.0",
     "react-native": "0.81.4"
   },
   "devDependencies": {
+    "@react-native-community/cli": "latest",
+    "@types/cors": "^2.8.19",
+    "@types/dotenv": "^6.1.1",
+    "@types/express": "^5.0.3",
     "@types/react": "~19.1.0",
-    "typescript": "~5.9.2",
-    "@react-native-community/cli": "latest"
+    "typescript": "~5.9.2"
   },
   "private": true
 }
