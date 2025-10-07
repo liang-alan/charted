@@ -1,4 +1,6 @@
-{
+import "dotenv/config"
+
+export default {
   "expo": {
     "name": "charted",
     "slug": "charted",
@@ -13,8 +15,12 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "extra": {
+      "spotifyClientId": process.env.SPOTIFY_CLIENT_ID || "" 
+    },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.charted"
     },
     "android": {
       "adaptiveIcon": {
@@ -22,13 +28,15 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.anonymous.charted"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      "expo-secure-store"
+      "expo-secure-store",
+      "expo-web-browser"
     ]
   }
 }

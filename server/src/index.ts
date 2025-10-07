@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import spotifyRoutes from "./routes/spotify"; 
+import spotifyRoutes from "./routes/spotify.js"; 
 
 dotenv.config();
 
