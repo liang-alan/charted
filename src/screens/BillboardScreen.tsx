@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text } from "react-native";
-import styles from "./styles/screen.styles"
+import styles from "./styles/styles"
 
 export default function BillboardScreen() {
     return (

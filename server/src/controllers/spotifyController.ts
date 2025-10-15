@@ -134,3 +134,33 @@ export const syncRecentlyPlayed = async (req: Request, res: Response) => {
         res.status(500).json({ error: "Spotify recently played failed" });
     }
 };
+
+export const getUserProfile = async (req: Request, res: Response) => {
+    try {
+        const authHeader = req.headers["authorization"];
+        if (!authHeader) return res.status(401).json({ error: "No token provided" });
+
+        const token = authHeader.split(" ")[1];
+
+
+        if (!token) {
+            return res.status(401).json({ error: "Not authenticated: missing access token." });
+        }
+
+        const { data } = await axios.get("https://api.spotify.com/v1/me", {
+            headers: { Authorization: `Bearer ${token}` },
+        });
+
+        return res.status(200).json(data);
+    } catch (err: any) {
+        if (axios.isAxiosError(err) && err.response) {
+            // Pass through Spotify error status/details when possible
+            return res
+                .status(err.response.status)
+                .json({ error: err.response.data?.error?.message || "Failed to fetch profile from Spotify." });
+        }
+        console.error("getUserProfile error:", err);
+        return res.status(500).json({ error: "Internal server error." });
+    }
+}
+

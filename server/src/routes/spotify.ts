@@ -4,7 +4,8 @@ import {
     exchangeToken,
     refreshToken,
     getTopTracks,
-    syncRecentlyPlayed
+    syncRecentlyPlayed,
+    getUserProfile
 } from "../controllers/spotifyController.js";
 
 const router = Router();
@@ -15,5 +16,6 @@ router.post("/token", exchangeToken);
 router.post("/refresh", refreshToken);
 router.get("/top-tracks", getTopTracks);
 router.get("/recently-played", syncRecentlyPlayed);
+router.get("/user-profile", getUserProfile)
 
 export default router;
